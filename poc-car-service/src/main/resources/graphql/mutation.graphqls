@@ -1,0 +1,22 @@
+type Car{
+    id: ID!,
+    model: String,
+    brand: Brand
+}
+
+enum Brand {
+    FIAT,
+    FORD,
+    HONDA
+}
+
+input CarInput {
+    model: String,
+    brand: Brand
+}
+
+type Mutation {
+    createCar(data: CarInput): Car,
+    updateCar(id: Long, data: CarInput): Car,
+    deleteCar(id: Long): String
+}

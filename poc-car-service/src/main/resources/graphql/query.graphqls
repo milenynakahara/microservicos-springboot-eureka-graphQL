@@ -1,0 +1,21 @@
+type Car{
+    id: ID!,
+    model: String,
+    brand: Brand
+}
+
+enum Brand {
+    FIAT,
+    FORD,
+    HONDA
+}
+
+input CarInput {
+    model: String,
+    brand: Brand
+}
+
+type Query {
+    findAllCars: [Car],
+    findCarById(id: Long): Car
+}
