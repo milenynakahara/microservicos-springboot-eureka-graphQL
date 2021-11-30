@@ -1,0 +1,16 @@
+type User{
+    id: ID!,
+    name: String,
+    cpf: Int
+}
+
+input UserInput{
+    name: String,
+    cpf: Int
+}
+
+type Mutation{
+    createUser(data: UserInput): User,
+    updateUser(id: Long, data: UserInput): User,
+    deleteUser(id: Long): String
+}
